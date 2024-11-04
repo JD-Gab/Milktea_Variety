@@ -1,0 +1,366 @@
+{% extends 'base.html' %}
+{% block active %} <li class="nav-item active"> {% endblock %}
+
+{% block css %}
+
+      <style>
+         .btn {
+ background-color: #8a1506;
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor: pointer;
+ border-radius: 10px;
+ border: 2px dashed #fff;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ transition: .4s;
+}
+
+.btn span:last-child {
+ display: none;
+}
+
+.btn:hover {
+ transition: .4s;
+ border: 2px dashed #8a1506;
+ background-color: #fff;
+ color: #8a1506;
+}
+
+.btn:active {
+ background-color: #87dbd0;
+}
+
+
+      </style>
+
+      {% endblock %}
+
+
+{% block body %}
+
+   
+      <!-- top -->
+      <div class="full_bg">
+         <div class="slider_main">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <!-- carousel code -->
+                     <div id="carouselExampleIndicators" class="carousel slide">
+                        <ol class="carousel-indicators">
+                           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                           <!-- first slide -->
+                           <div class="carousel-item active">
+                              <div class="carousel-caption relative">
+                                 <div class="row d_flex">
+                                    <div class="col-md-5">
+                                       <div class="zon_text">
+                                          <h1 data-animation="animated bounceInLeft">
+                                             Milktea<br>
+                                             Variety
+                                          </h1>
+                                          <p data-animation="animated bounceInLeft">
+                                             Don't know what milktea to drink? Let us help you choose what may interest you!
+                                          </p>
+                                          <!--<button class="btn btn-primary  read_more bounceInLeft" data-animation="animated bounceInLeft">Read More</button>-->
+                                          <a href="{{url_for('recommend')}}"><button class="btn btn-primary  read_more bounceInLeft" data-animation="animated bounceInLeft">Search now</button></a>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                       <div class="coff_img">
+                                          <figure><img src="static/images/bubble-milk-tea-pearl-milk-tea-png (4).webp" alt="#"/></figure>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- second slide -->
+                           <div class="carousel-item">
+                              <div class="carousel-caption relative">
+                                 <div class="row d_flex">
+                                    <div class="col-md-5">
+                                       <div class="zon_text">
+                                          <h1 data-animation="animated bounceInLeft">
+                                             Milktea<br>
+                                             Variety
+                                          </h1>
+                                          <p data-animation="animated bounceInLeft">
+                                             Try it now and choose the milktea that bests your taste!
+                                          </p>
+                                          <!--button class="btn btn-primary  read_more bounceInLeft" data-animation="animated bounceInLeft">Read More</button>-->
+                                          <a href="{{url_for('recommend')}}"><button class="btn btn-primary  read_more bounceInLeft" data-animation="animated bounceInLeft">Search Now</button></a>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                       <div class="coff_img">
+                                          <figure><img src="static/images/bubble-milk-tea-pearl-milk-tea-png (1) (1).webp" alt="#"/></figure>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- third slide-->
+                           <div class="carousel-item">
+                              <div class="carousel-caption relative">
+                                 <div class="row d_flex">
+                                    <div class="col-md-5">
+                                       <div class="zon_text">
+                                          <h1 data-animation="animated bounceInLeft">
+                                             Milktea<br>
+                                             Variety
+                                          </h1>
+                                          <p data-animation="animated bounceInLeft">
+                                             Delicious, from every last drop!
+                                          </p>
+                                          <!--<button class="btn btn-primary  read_more bounceInLeft" data-animation="animated bounceInLeft">Read More</button>-->
+                                          <a href="{{url_for('recommend')}}"><button class="btn btn-primary  read_more bounceInLeft" data-animation="animated bounceInLeft">Search Now</button></a>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                       <div class="coff_img">
+                                          <figure><img src="static/images/21ace269e72ea052a568318d21cb0eee (1).png" alt="#"/></figure>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- controls -->
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end banner -->
+      <!-- about -->
+      <!--<div class="about">
+         <div class="container">
+            <div class="row d_flex grid">
+               <div class="col-md-6">
+                  <div class="about_img text_align_center">
+                     <figure><img src="images/about.png" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-6 order1">
+                  <div class="titlepage text_align_left">
+                     <h2>About Zon Coffee</h2>
+                     <p>sing 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors  
+                     </p>
+                     <a class="read_more" href="about.html">Read More</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>-->
+      <!-- end about -->
+      <!-- service -->
+      <div class="service">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center">
+                     <h2>Milktea For You</h2>
+                     <p> More sugar? Other ingredients you prefer? Try different milkteas that may suit your taste in this list. 
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <!--  Demos -->
+                  <div class="owl-carousel owl-theme">
+                     <div class="item">
+                        <div class="service_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src="static/images/strawberrymilktea.png" alt="#"/></figure>
+                           </div>
+                           <h3>Milktea</h3>
+                           <p>For those fruity flavor enthusiast!
+                           </p>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="service_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src="static/images/21ace269e72ea052a568318d21cb0eee (1).png" alt="#"/></figure>
+                           </div>
+                           <h3>Milktea</h3>
+                           <p>Lots of milktea to choose from!
+                           </p>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="service_box text_align_center">
+                           <div class="ser_img">
+                              <figure><img src="static/images/thaimilktea.png" alt="#"/></figure>
+                           </div>
+                           <h3>Milktea</h3>
+                           <p>Ah, a classic! 
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <a class="read_more btn" href="{{url_for('recommend')}}">Mix Your Own!</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end service -->
+      <!-- section blue_bg --
+      <div class="section blue_bg">
+         <div class="container-fluid">
+            <div class="row">
+               !-- contact --
+               <div class="col-lg-6 col-md-12">
+                  <div class="contact">
+                     <div class="row ">
+                        <div class="col-md-12">
+                           <div class="titlepage text_align_center">
+                              <h2>Get In Touch</h2>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <form id="request" class="main_form">
+                              <div class="row">
+                                 <div class="col-md-12 ">
+                                    <input class="contactus" placeholder="Your name" type="type" name=" Name"> 
+                                 </div>
+                                 <div class="col-md-12">
+                                    <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
+                                 </div>
+                                 <div class="col-md-12">
+                                    <input class="contactus" placeholder="Email" type="type" name="Email">                          
+                                 </div>
+                                 <div class="col-md-12">
+                                    <textarea class="textarea" placeholder="Message" type="type" Message="Name"></textarea>
+                                 </div>
+                                 <div class="col-md-12">
+                                    <button class="send_btn">Send</button>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               !-- contact -->
+               <!-- testimonial section --
+               <div class="col-lg-6 col-md-12">
+                  <div class="testimonial">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="titlepage text_align_left">
+                              <h2>Testimonial</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div id="myCarousel" class="carousel slide testimonial_Carousel " data-ride="carousel">
+                              <ol class="carousel-indicators">
+                                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                 <li data-target="#myCarousel" data-slide-to="1"></li>
+                                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                              </ol>
+                              <div class="carousel-inner">
+                                 <div class="carousel-item active">
+                                    <div class="container">
+                                       <div class="carousel-caption ">
+                                          <div class="row">
+                                             <div class="col-md-12">
+                                                <div class="testimonial_box text_align_left">
+                                                   <p>uffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going touffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going touffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to</p>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-12">
+                                                <div class="testimonial_pro">
+                                                   <figure><img src="images/test_pro.jpg" alt="#"/></figure>
+                                                   <h3>Mark Jonson <br><span class="cust">Customre</span></h3>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="carousel-item">
+                                    <div class="container">
+                                       <div class="carousel-caption">
+                                          <div class="row">
+                                             <div class="col-md-12">
+                                                <div class="testimonial_box text_align_left">
+                                                   <p>uffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going touffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going touffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to</p>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-12">
+                                                <div class="testimonial_pro">
+                                                   <figure><img src="images/test_pro.jpg" alt="#"/></figure>
+                                                   <h3>Mark Jonson <br><span class="cust">Customre</span></h3>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="carousel-item">
+                                    <div class="container">
+                                       <div class="carousel-caption">
+                                          <div class="row">
+                                             <div class="col-md-12">
+                                                <div class="testimonial_box text_align_left">
+                                                   <p>uffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going touffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going touffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to</p>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-12">
+                                                <div class="testimonial_pro">
+                                                   <figure><img src="images/test_pro.jpg" alt="#"/></figure>
+                                                   <h3>Mark Jonson <br><span class="cust">Customre</span></h3>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                              <i class="fa fa-angle-left" aria-hidden="true"></i>
+                              <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                              <i class="fa fa-angle-right" aria-hidden="true"></i>
+                              <span class="sr-only">Next</span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <div class="coff">
+                              <figure><img src="images/coff.png" alt="#"/></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <-- end testimonial section -->
+            </div>
+         </div>
+      </div>
+      <!-- end section blue_bg -->
+
+      {% endblock %}
+
+     

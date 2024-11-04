@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+{% block active2 %} <li class="nav-item active"> {% endblock %}
+
+{% block css %}
+      <style>
+        .form-container {
+  width: 400px;
+  border-radius: 0.75rem;
+  background-color: rgba(17, 24, 39, 1);
+  padding: 2rem;
+  color: rgba(243, 244, 246, 1);
+  
+  
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.form {
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  color: rgba(156, 163, 175, 1);
+  margin-bottom: 4px;
+}
+
+.input-group input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(55, 65, 81, 1);
+  outline: 0;
+  background-color: rgba(17, 24, 39, 1);
+  padding: 0.75rem 1rem;
+  color: rgba(243, 244, 246, 1);
+}
+
+.input-group input:focus {
+  border-color: rgba(167, 139, 250);
+}
+
+.btn {
+ background-color: #7e77e4;
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor: pointer;
+ border-radius: 10px;
+ border: 2px dashed #fff;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ transition: .4s;
+}
+
+.btn span:last-child {
+ display: none;
+}
+
+.btn:hover {
+ transition: .4s;
+ border: 2px dashed #8a1506;
+ background-color: #fff;
+ color: #8a1506;
+}
+
+.btn:active {
+ background-color: #87dbd0;
+}
+
+
+
+/* Base Colors */
+:root {
+  --shade-10: #0062c4;
+  --shade-1: #d7dcdf;
+  --shade-0: #fff;
+  --teal: #1abc9c;
+}
+
+
+
+.range-slider {
+  margin: 60px 0 0 0;
+}
+
+/* Range Slider */
+.range-slider {
+  width: 100%;
+  color: #0062c4;
+}
+
+.range-slider__range {
+  width: calc(100% - (60px + 13px));
+  height: 10px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Range Handle */
+.range-slider__range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+.range-slider__range::-webkit-slider-thumb:hover {
+  background: #1abc9c;
+}
+
+.range-slider__range:active::-webkit-slider-thumb {
+  background: #1abc9c;
+}
+
+.range-slider__range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #2c3e50;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+.range-slider__range::-moz-range-thumb:hover {
+  background: #1abc9c;
+}
+
+.range-slider__range:active::-moz-range-thumb {
+  background: #1abc9c;
+}
+
+/* Focus state */
+.range-slider__range:focus {
+  outline: none;
+}
+
+.range-slider__range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px #1abc9c;
+}
+
+/* Range Label */
+.range-slider__value {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: #d42323;
+  padding: 5px 10px;
+  margin-left: 8px;
+}
+
+.range-slider__value:after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #2c3e50;
+  border-bottom: 7px solid transparent;
+  content: '';
+}
+
+/* Firefox Overrides */
+::-moz-range-track {
+  background: #d7dcdf;
+  border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}
+      </style>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+      <!-- about -->
+      
+   <div class="about" style="border-top: 0;">
+      <div class="section blue_bg" style="border-top: 0;">
+        <div class="container-fluid">
+            <div class="row">
+               <!-- contact -->
+               <div class="col-md-6 offset-md-3">
+                  <div class="contact">
+                     <div class="row ">
+                        <div class="col-md-12">
+                           <div class="titlepage text_align_center">
+                              <h2>Mix Your Own!</h2>
+                              <p>Milkteas have a variety of styles that ranges according to different solution of ingredients, from milk, to the amount of tapioca, to liquid:ingredient ratio. Find out what's the best milktea for you!</p>
+                           </div>
+                        </div>
+                        <div class="col-md-12">
+                           <form id="request" class="main_form" action="{{url_for('recoprocessing')}}" method="POST">
+                              <div class="row">
+                                 
+                                 <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="range-slider">
+                                            <h3><label for="sugar" style="color: #8a1506;">Sugar percentage</label></h3>
+                                            <div class="d-flex">
+                                                <input class="range-slider__range d-flex" id="sugar" name="sugar" type="range" value="0" min="0" max="100">
+                                                <span class="range-slider__value">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="range-slider">
+                                            <h3><label for="milk"  style="color: #8a1506;">Milk percentage</label></h3>
+                                            <div class="d-flex">
+                                                <input class="range-slider__range d-flex" id="milk" name="milk" type="range" value="0" min="0" max="100">
+                                                <span class="range-slider__value">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="range-slider">
+                                            <h3><label for="tapioca"  style="color: #8a1506;">Tapioca pearls percentage</label></h3>
+                                            <div class="d-flex">
+                                                <input class="range-slider__range d-flex" id="tapioca" name="tapioca" type="range" value="0" min="0" max="100">
+                                                <span class="range-slider__value">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="range-slider">
+                                            <h3><label for="greentea"  style="color: #8a1506;">Green Tea percentage</label></h3>
+                                            <div class="d-flex">
+                                                <input class="range-slider__range d-flex" id="greentea" name="greentea" type="range" value="0" min="0" max="100">
+                                                <span class="range-slider__value">0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+
+                                 <div class="col-md-12">
+                                  <div class="input-group">
+                                      <div class="range-slider">
+                                          <h3><label for="coffee"  style="color: #8a1506;">Coffee percentage</label></h3>
+                                          <div class="d-flex">
+                                              <input class="range-slider__range d-flex" id="coffee" name="coffee" type="range" value="0" min="0" max="100">
+                                              <span class="range-slider__value">0</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                               </div>
+
+                                
+                                 <div class="col-md-12">
+                                    <input class="send_btn btn" type="submit" value="Find Your Milktea"></input>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- contact -->
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      </div>
+
+      <script>
+         function setupRangeSliders() {
+             const sliders = document.querySelectorAll('.range-slider__range');
+     
+             sliders.forEach((slider) => {
+                 const valueDisplay = slider.nextElementSibling; //next sibling that isthe span element
+     
+                 
+                 valueDisplay.textContent = slider.value;
+     
+                 // value display
+                 //function this.addEventListener()
+                 //const x = document.getElementById
+                 slider.addEventListener('input', function () {
+                     valueDisplay.textContent = this.value;
+                 });
+             });
+         }
+     
+         
+         setupRangeSliders();
+     </script>
+
+
+      {% endblock %}
+                      
+
+
+      {% block js %}
+    
+
+      {% endblock %}
