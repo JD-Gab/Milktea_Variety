@@ -31,7 +31,6 @@ milkteatype = {1:'Black Milk Tea',2:'Taro Milk Tea',3:'Thai Milk Tea',4:'Brown S
 X = data.drop(columns=['Recommended Milk Tea','description'])
 y = data['Recommended Milk Tea']
 z = data.drop(data.columns[[0,1,2,3,4]], axis=1)
-#a = data.drop(data.columns[[5]],axis=1)
 
 X2 = data2.drop(columns=['Recommended Milk Tea','description'])
 y2 = data2['Recommended Milk Tea']
@@ -45,10 +44,6 @@ model.fit(X.values,y)
 
 @app.route('/')
 def index():
-
-    """print(z.values)
-    for i in z.values:
-        print(i[0])"""
 
     return render_template('index.html')
 
@@ -88,7 +83,6 @@ def result():
     predicted_value = model.predict([datalist2])
     knn_predicted = knnmodel.predict([datalist2])[0]
     milktea2 = data.iloc[knn_predicted][5]
-    print(type(milktea2))
 
     string_pv = np.array(predicted_value[0]).tolist()
 
@@ -100,10 +94,6 @@ def result():
         if milktea2 == milktea:
             description2 = np.array(i[1]).tolist()
             image2 = milkteaset[milktea2]
-    
-    print(f'description is: {description}')
-    print(type(image2))
-    print(predicted_value)
 
     return render_template('blog.html', milktea = predicted_value[0], description = description, image = image, milktea2 = milktea2, description2 = description2, image2 = image2)
 
