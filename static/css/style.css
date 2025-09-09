@@ -146,11 +146,11 @@ a,
 .btn {
      text-decoration: none !important;
      outline: none !important;
-     -webkit-transition: all .3s ease-in-out;
+     /* -webkit-transition: all .3s ease-in-out;
      -moz-transition: all .3s ease-in-out;
      -ms-transition: all .3s ease-in-out;
      -o-transition: all .3s ease-in-out;
-     transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out; */
 }
 
 img {
@@ -185,6 +185,11 @@ img {
 
 .navbar-form input {
      border: none !important;
+}
+
+.navbar-collapse{
+     justify-content: flex-end;
+     margin-left: 1rem;
 }
 
 .badge {
@@ -245,6 +250,7 @@ button {
 }
 
 .titlepage {
+     padding-top: 20px;
      padding-bottom: 40px;
 }
 
@@ -319,7 +325,7 @@ button {
      height: 50px !important;
      display: block;
      text-align: left;
-     padding-top: 36px;
+     /* padding-top: 36px; */
 }
 
 ul.infomaco {
@@ -389,14 +395,16 @@ ul.infomaco li a {
 
 .full_bg {
      background-image: linear-gradient(to right, #7e77e4 67%, #8a1506 33%);
-     border: #fff solid 20px;
+     /*border: #fff solid 20px;*/
      border-top: inherit;
      border-right: inherit;
-     padding-bottom: 140px;
+     border-bottom: 0;
+     
 }
 
 .slider_main {
-     padding-top: 10%;
+     /* padding-top: 10%; */
+     padding-top: 3rem;
 }
 
 .carousel-caption h1 {
@@ -418,6 +426,7 @@ ul.infomaco li a {
 
 .coff_img {
      padding-right: 70px;
+     height: 700px;
 }
 
 .zon_text h1 {
@@ -485,11 +494,12 @@ ul.infomaco li a {
 }
 
 #carouselExampleIndicators .carousel-control-prev {
-     top: 86% !important;
+     top: 72% !important;
      left: -15px;
 }
 
 #carouselExampleIndicators .carousel-control-next {
+     top: 86% !important;
      right: inherit;
      left: -15px;
 }
@@ -521,10 +531,9 @@ ul.infomaco li a {
 
 .about {
      background: #7e77e4;
-     padding-bottom: 90px;
-     border: #fff solid 20px;
      border-top: inherit !important;
      border-left: inherit !important;
+     
 }
 
 .about .titlepage {
@@ -664,19 +673,13 @@ ul.infomaco li a {
 .blue_bg {
      background: #7e77e4;
      padding-top: 75px;
-     padding-bottom: 80px;
-     border: #fff solid 20px;
+     padding-bottom: 60px;
      border-bottom: inherit !important;
      border-left: inherit !important;
 }
 
 
 /** contact **/
-
-.contact {
-     padding-right: 70px;
-     border-right: #fff solid 1px;
-}
 
 .main_form {
      width: 100%;
@@ -1199,5 +1202,18 @@ ul.conta li a {
      appearance: none;
 }
 
+@media only screen and (min-width: 1240px) and (max-width: 1400px) {
+
+     #carouselExampleIndicators .carousel-control-prev {
+     top: 72% !important;
+     left: -40px;
+     }
+
+     #carouselExampleIndicators .carousel-control-next {
+     top: 86% !important;
+     right: inherit;
+     left: -40px;
+     }
+}
 
 /** end blog **/
